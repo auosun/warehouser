@@ -1,0 +1,98 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link href="/static/warehouser/style.css" rel="stylesheet" />
+{#    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>#}
+{#    <script src="/static/p5/addons/p5.sound.min.js"></script>#}
+
+
+    <title>Warehouser</title>
+</head>
+<body>
+    <div id="nescss">
+        <header :class="{ sticky: scrollPos > 50 }">
+        <div class="container">
+          <div class="nav-brand">
+            <a href="#">
+              <h1><i class="snes-jp-logo brand-logo"></i>{{ name }}</h1>
+            </a>
+            <p>Easy to become warehouser with this website!</p>
+          </div>
+
+          <div class="social-buttons">
+            <p>Share on SNS</p>
+            <div class="share">
+              <a href="https://twitter.com/share?text=NES.css%EF%BD%9CNES-style%20CSS%20Framework%20%40bc_rikko&url=https://nostalgic-css.github.io/NES.css/" target="_blank"><i class="nes-icon twitter"></i></a>
+              <a href="https://www.facebook.com/sharer.php?u=https://nostalgic-css.github.io/NES.css/&t=NES.css%EF%BD%9CNES-style%20CSS%20Framework" target="_blank"><i class="nes-icon facebook"></i></a>
+              <a href="https://www.linkedin.com/shareArticle?url=https%3A//nostalgic-css.github.io/NES.css/&title=NES.css%EF%BD%9CNES-style%20CSS%20Framework" target="_blank"><i class="nes-icon linkedin"></i></a>
+              <a href="https://github.com/nostalgic-css/NES.css" target="_blank"><i class="nes-icon github"></i></a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="container">
+        <main class="main-content">
+          <section class="topic">
+            <h2 id="Login"><a href="#Login">#</a>Login</h2>
+            <p>Hello,Guest. If you want to use this website Please Login!</p>
+          </section>
+
+
+        <section class="topic">
+            <h2 id="TRY"><a href="#TRY">#</a>TRY</h2>
+            <p>Try to use it.</p>
+            <section class="showcase" v-for="sample in collection" :key="sample">
+              <section class="nes-container with-title">
+                <h3 class="title">TEST</h3>
+                    <button type="button" class="nes-btn is-primary">状态数据</button>
+                    <button type="button" class="nes-btn is-success">其他数据</button>
+                    <button type="button" class="nes-btn">+</button>
+                    <button type="button" class="nes-btn">-</button>
+                    <button type="button" class="nes-btn">x</button>
+                    <button type="button" class="nes-btn">%</button>
+{#                    <button type="button" class="nes-btn is-primary">+</button>#}
+{#                    <button type="button" class="nes-btn is-success">-</button>#}
+{#                    <button type="button" class="nes-btn is-warning">x</button>#}
+{#                    <button type="button" class="nes-btn is-error">%</button>#}
+
+                  <iframe src="{% url 'p5' %}" frameborder="1" width="900" height="900" scrolling="no" style="margin-top: 20px"></iframe>
+
+
+
+              </section>
+
+            </section>
+
+        </section>
+        </main>
+
+
+
+        <footer>
+          <p>
+            <span>&copy;2020</span>
+            <a href="https://kuroeveryday.blogspot.com/" target="_blank" rel="noopener">IVT</a>
+            <span>-</span>
+            <a href="https://github.com/auosun" target="_blank" rel="noopener">@auosun</a>
+          </p>
+        </footer>
+
+        <!-- Copied balloon -->
+        <div class="nes-balloon from-right copied-balloon" :style="copiedBalloon">
+          <p>copied!!</p>
+        </div>
+
+        <!-- FAB Button -->
+        <button type="button" class="nes-btn is-error scroll-btn" :class="{ active: scrollPos > 500 }" @click="window.scrollTo({ top:0, behavior: 'smooth' })"><span>&lt;</span></button>
+
+      </div>
+
+
+
+    </div>
+</body>
+</html>
